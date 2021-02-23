@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user_id
-            redirect_to '/'
+            redirect_to 'signup'
         else
             render :new
         end

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user_id
-            redirect_to signup_path
+            redirect_to users_path
         else
             redirect_to 'login'
         end
