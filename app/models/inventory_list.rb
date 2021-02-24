@@ -1,0 +1,2 @@
+class InventoryList < ApplicationRecord
+end

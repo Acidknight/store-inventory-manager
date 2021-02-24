@@ -7,7 +7,7 @@ User has many inventory lists
 Lists have many items
 Items have many lists
 
-Join table: products
+Join table: items
 list_id
 item_id
 quantity
