@@ -29,5 +29,18 @@ class ItemsController < ApplicationController
     def edit
         set_item
     end
-    
+
+    private
+
+    def set_item
+        @item = Item.find_by(id: params[:id])
+        if !@item
+            redirect_to items_path
+        end
+    end
+
+    def item_params
+        params.require(:item).permit(:name, :category, :quantity, :location)
+    end
+
 end
