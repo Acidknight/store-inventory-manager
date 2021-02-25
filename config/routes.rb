@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :items
   resources :inventory_lists
   root 'sessions#home'
