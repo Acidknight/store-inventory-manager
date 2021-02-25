@@ -12,4 +12,22 @@ class ItemsController < ApplicationController
             render new
         end
     end
+
+    def index
+        if params[:name]
+            @items = Item.search_by_name(params[:name]).order_by_name
+            @items = Item.order_by_name if @items == []
+        else
+            @items = Item.order_by_name
+        end
+    end
+
+    def show
+        set_item
+    end
+
+    def edit
+        set_item
+    end
+    
 end
