@@ -15,7 +15,7 @@ class InventoryListsController < ApplicationController
     end
 
     def create 
-        @inventory_list = current_user.inventory_list.build(inventory_lists_params)
+        @inventory_list = current_user.inventory_lists.build(inventory_lists_params)
         if @inventory_list.save 
             redirect_to inventory_lists_path(@inventory_list)
         else 
