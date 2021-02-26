@@ -1,5 +1,7 @@
 class InventoryListsController < ApplicationController
 
+    before_action :redirect_if_not_logged_in
+
     def index
         if params[:i]
             @inventory_lists = InventoryList.search(params[:i])
@@ -27,6 +29,16 @@ class InventoryListsController < ApplicationController
 
     def edit 
         @inventory_list = InventoryList.find(params[:id])
+    end
+
+    def update
+        @inventory_list = current_user.inventory_lists.find(params[:id])
+        if @inventory_list.update(inventory_lists_params)
+            redirect_to inventory_list_path(@inventory_list)
+        else
+            @error = @inventory_list.errors.full_messages
+            render :edit 
+        end
     end
 
     private 
