@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @user.username %>!</h1>
+<h4>Let's get started, add a new list or view all lists!</h4>
+<br>
+<br>
+<%= button_to "Inventory Lists", inventory_list_path %>
+<br>
+<%= button_to "Create new list", new_inventory_list_path %>
