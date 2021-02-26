@@ -10,7 +10,7 @@
 <div>
     <ul>
       <% @inventory_lists.each do |inventory_list| %>
-        <li><%= link_to inventory_list.name, inventory_list_path(inventory_list) %></li>
+        <li><%= link_to inventory_list.name, inventory_lists_path(inventory_list) %></li>
       <% end %>
     </ul> 
 </div> 
