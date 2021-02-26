@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
    
     def index
-        if params[:list_id] && @inventory_list = InventoryList.find_by_id(params[:list_id])
+        if params[:inventory_list_id] && @inventory_list = InventoryList.find_by_id(params[:inventory_list_id])
             @comments = @inventory_list.comments
         elsif current_user
             @comments = current_user.comments.all
@@ -13,17 +13,17 @@ class CommentsController < ApplicationController
     end
 
     def new
-        if params[:list_id] && @inventory_list = InventoryList.find_by_id(params[:list_id])
+        if params[:inventory_list_id] && @inventory_list = InventoryList.find_by_id(params[:inventory_list_id])
             @comment = @inventory_list.comments.new
             
         else
-            @error = "Inventory List doesn't exist" if params[:list_id]
+            @error = "Inventory List doesn't exist" if params[:inventory_list_id]
             @comment = Comment.new
         end
     end
 
     def create
-        @inventory_list = InventoryList.find(params[:comment][:list_id])
+        @inventory_list = InventoryList.find(params[:comment][:inventory_list_id])
         @comment = current_user.comments.new(comment_params)
         
         if @comment.save
@@ -67,6 +67,6 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:content, :list_id, :user_id)
+        params.require(:comment).permit(:content, :inventory_list_id, :user_id)
     end
 end
