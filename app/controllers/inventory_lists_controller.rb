@@ -24,7 +24,7 @@ class InventoryListsController < ApplicationController
     end
 
     def show
-        @inventory_list = InventoryList.find_by(params[:id])
+        @inventory_list = InventoryList.find_by_id(params[:id])
     end
 
     def edit 

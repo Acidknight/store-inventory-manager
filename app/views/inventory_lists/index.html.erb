@@ -1,0 +1,16 @@
+<div>
+  <h4>Search for an Inventory List: </h4>
+  <%= form_tag(inventory_lists_path, method: 'get') do %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("search") %>
+  <% end %>
+</div>
+
+
+<div>
+    <ul>
+      <% @inventory_lists.each do |inventory_list| %>
+        <li><%= link_to inventory_list.name, inventory_list_path(inventory_list) %></li>
+      <% end %>
+    </ul> 
+</div> 
