@@ -10,6 +10,6 @@
 <h4><strong>Comments: </strong></h4>
 <% @inventory_list.comments.each do |comment| %>
     <ul>
-        <li><strong><%= comment.user.user_name %></strong> says "<%= comment.content %>"</li>
+        <li><strong><%= comment.user.username %></strong> says "<%= comment.content %>"</li>
     </ul>
 <% end %>
