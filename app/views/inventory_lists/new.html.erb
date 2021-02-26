@@ -1,0 +1,25 @@
+<h1>Create a new inventory list!</h1>
+
+<%= form_for(@inventory_list) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :item_count %>
+    <%= f.text_field :item_count %>
+    <br>
+    <br>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+    <br>
+    <br>
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+    <br>
+    <br>
+    <%= f.label :list_content %>
+    <%= f.text_field :list_content %>
+    <%= f.submit "Add Recipe" %>
+
+
+<% end %>

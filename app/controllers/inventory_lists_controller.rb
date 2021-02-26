@@ -3,10 +3,10 @@ class InventoryListsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        if params[:i]
-            @inventory_lists = InventoryList.search(params[:i])
+        if params[:q]
+            @inventory_lists = InventoryList.search(params[:q])
         else
-            @inventory_lists = InventoryList.alpha.all 
+            @inventory_lists = InventoryList.alpha.all
         end
     end
 
