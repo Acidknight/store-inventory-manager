@@ -7,4 +7,17 @@ class InventoryListsController < ApplicationController
             @inventory_lists = InventoryList.alpha.ApplicationController
         end
     end
+
+    def new
+        @inventory_list = InventoryList.new
+    end
+
+    def create 
+        @inventory_list = current_user.inventory_lists.build(inventory_lists_params)
+        if @inventory_list.save 
+            redirect_to inventory_list_path(@inventory_list)
+        else 
+            render new
+        end
+    end
 end
