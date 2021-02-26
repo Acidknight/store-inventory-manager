@@ -5,3 +5,11 @@
 <h4><%= @inventory_list.list_content%></h4>
 <br><br>
 
+<%= link_to "Add a comment", new_inventory_list_comment_path(@inventory_list)  %>
+<br><br>
+<h4><strong>Comments: </strong></h4>
+<% @inventory_list.comments.each do |comment| %>
+    <ul>
+        <li><strong><%= comment.user.username %></strong> says "<%= comment.content %>"</li>
+    </ul>
+<% end %>
