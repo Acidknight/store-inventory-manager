@@ -20,4 +20,10 @@ class InventoryListsController < ApplicationController
             render new
         end
     end
+
+    private 
+
+    def inventory_lists_params
+        params.require(:inventory_list).permit(:name, :item_count, :date, :time, :list_content)
+    end
 end
