@@ -33,4 +33,14 @@ class CommentsController < ApplicationController
             render :new
         end
     end
+
+    def show
+        @comment = Comment.find(params[:id])
+    end
+
+    private
+
+    def comment_params
+        params.require(:comment).permit(:content, :list_id, :user_id)
+    end
 end
