@@ -6,7 +6,7 @@ class InventoryListsController < ApplicationController
         if params[:i]
             @inventory_lists = InventoryList.search(params[:i])
         else
-            @inventory_lists = InventoryList.alpha.ApplicationController
+            @inventory_lists = InventoryList.alpha.all 
         end
     end
 
@@ -19,7 +19,7 @@ class InventoryListsController < ApplicationController
         if @inventory_list.save 
             redirect_to inventory_list_path(@inventory_list)
         else 
-            render new
+            render :new
         end
     end
 
