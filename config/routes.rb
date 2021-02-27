@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create"
   delete 'logout' => 'sessions#destroy'
 
-  get 'auth/google', to: 'sessions#create'
+  get '/auth/:provider', to: 'sessions#google'
 
   resources :comments 
   resources :users do 

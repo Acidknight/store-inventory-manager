@@ -19,16 +19,9 @@ class SessionsController < ApplicationController
     end
 
     def google
-        @user = User.find_or_create_by(email: auth["info"]["email"]) do |user|
-            user.username = auth["info"]["first_name"]
-            user.password = SecureRandom.hex(10)
-        end
-        if @user.save
-            session[:user_id] = @user.id 
-            redirect_to user_path(@user)
-        else
-            redirect_to '/'
-        end
+        @user = User.update_or_create(env["omniauth.auth"])
+        session[:id] = user.id 
+        redirect_to root_path
     end
 
     def destroy
