@@ -14,6 +14,11 @@
     <ul>
       <% @inventory_lists.each do |inventory_list| %>
         <li><%= link_to inventory_list.name, inventory_list_path(inventory_list) %></li>
+        <h6><%= inventory_list.date %> 
+        <br>
+        <%= inventory_list.time %> 
+        <br>
+        by: <%= inventory_list.user.username %></h6>
       <% end %>
     </ul> 
 </div> 
