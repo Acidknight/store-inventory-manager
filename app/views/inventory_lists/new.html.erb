@@ -4,6 +4,9 @@
 <h1>Create a new inventory list!</h1>
 
 <%= form_for(@inventory_list) do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @inventory_list} %>
+    
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br>

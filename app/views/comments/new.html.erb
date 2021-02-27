@@ -4,6 +4,9 @@
 <h1>Leave a comment for <%= @inventory_list.name %> list</h1>
 
 <%= form_for(@comment) do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @comment} %>
+    
     <%= f.hidden_field :inventory_list_id, :value => @inventory_list.id %>
     
     <%= f.label :content, "Comment" %>
