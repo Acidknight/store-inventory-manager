@@ -41,6 +41,17 @@ class InventoryListsController < ApplicationController
         end
     end
 
+    def destroy
+        @inventory_list = current_user.inventory_lists.find(params[:id])
+        if @inventory_list.destroy
+            flash[:success] = "Your list was successfully deleted."
+            redirect_to inventory_lists_path
+        else
+            @error = @inventory_list.errors.full_messages
+            render :edit
+        end
+    end
+
     private 
 
     def inventory_lists_params
