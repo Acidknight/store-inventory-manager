@@ -24,10 +24,33 @@ class SessionsController < ApplicationController
         redirect_to root_path
     end
 
+    def facebook
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
+          u.name = auth['info']['name']
+          u.email = auth['info']['email']
+          u.image = auth['info']['image']
+        end
+     
+        session[:user_id] = @user.id
+     
+        render :new
+      end
+
     def destroy
         session.delete :user_id
         redirect_to root_path
     end
+
+    def fbcreate
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
+          u.name = auth['info']['name']
+          u.email = auth['info']['email']
+          u.password = SecureRandom.hex(10)
+        end
+          session[:user_id] = @user.id
+          flash[:success] = "Welcome back #{@user.name}!"
+          redirect_to user_path(@user)
+      end
 
     private
 

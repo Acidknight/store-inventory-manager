@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#home'
+  get '/auth/facebook' => 'sessions#fbcreate'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create"
   delete 'logout' => 'sessions#destroy'
 
-  get '/auth/:provider', to: 'sessions#google'
 
   resources :comments 
   resources :users do 
