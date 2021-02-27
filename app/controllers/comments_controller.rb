@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
         @comment = current_user.comments.find(params[:id])
         if @comment.destroy
             flash[:success] = "Your comment was successfully deleted."
-            redirect_to recipes_path
+            redirect_to inventory_lists_path
         else
             @error = @comment.errors.full_messages
             render :edit

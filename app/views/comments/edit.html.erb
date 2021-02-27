@@ -1,0 +1,14 @@
+<h2>Edit your comment</h2>
+
+<%= form_for(@comment) do |f| %> 
+     
+    <%= f.label :content, "Comment: " %>
+    <%= f.text_field :content, placeholder: "Update your comment" %>
+    <br>
+    <br>
+    <%= f.submit "Submit" %>
+<% end %>
+
+<p class="button"><%= button_to 'Delete Comment', comment_path(@comment), method: 'delete' %></p>
+
+<p><%= button_to 'Return to the homepage', root_path, method: 'get' %></p>
