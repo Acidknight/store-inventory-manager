@@ -34,7 +34,7 @@ class InventoryListsController < ApplicationController
     def update
         @inventory_list = current_user.inventory_lists.find(params[:id])
         if @inventory_list.update(inventory_lists_params)
-            redirect_to inventory_lists_path(@inventory_list)
+            redirect_to inventory_list_path(@inventory_list)
         else
             @error = @inventory_list.errors.full_messages
             render :edit 

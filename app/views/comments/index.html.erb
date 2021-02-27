@@ -2,6 +2,6 @@
 
 <ul>
 <% @comments.each do |comment| %>
-    <li><%= comment.content %></li>
+    <li><%= link_to comment.content, comment_path(comment) %></li>
 <% end %>
 </ul>
