@@ -13,7 +13,7 @@
 <div>
     <ul>
       <% @inventory_lists.each do |inventory_list| %>
-        <li>Name:<%= link_to inventory_list.name, inventory_list_path(inventory_list) %></li>
+        <h2>Name: <%= link_to inventory_list.name, inventory_list_path(inventory_list) %></h2>
         Date:<%= inventory_list.date %> 
         <br>
         Time:<%= inventory_list.time %> 
