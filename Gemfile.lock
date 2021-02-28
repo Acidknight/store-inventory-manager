@@ -267,7 +267,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  omniauth-rails_csrf_protection (~> 1.0)
+  omniauth-rails_csrf_protection
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3)
