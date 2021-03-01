@@ -16,10 +16,6 @@ class SessionsController < ApplicationController
         end
     end
 
-    def google
-        
-    end
-
     def omniauth
         @user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
             u.username = auth['info']['name']

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => "sessions#create"
   delete 'logout' => 'sessions#destroy'
+  get '/edit' => "inventory_lists#update"
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
 

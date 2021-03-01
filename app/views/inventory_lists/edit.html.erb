@@ -5,23 +5,23 @@
 
 <%= form_for(@inventory_list) do |f| %> 
     <%= f.label :name, "name: " %>
-    <%= f.text_field :title, placeholder: "#{@user.inventory_list(name)}"%> 
+    <%= f.text_field :name  %> 
     <br>
     <br>
     <%= f.label :item_count, "Item Count: " %>
-    <%= f.text_field :item_count, placeholder: "#{@user.inventory_list(item_count)}" %>
+    <%= f.text_field :item_count %>
     <br>
     <br>
     <%= f.label :date, "Date: " %>
-    <%= f.text_field :date, placeholder: "#{@user.inventory_list(date)}" %>
+    <%= f.text_field :date %>
     <br>
     <br>
     <%= f.label :time, "Time: " %>
-    <%= f.text_field :time, placeholder: "#{@user.inventory_list(time)}" %>
+    <%= f.text_field :time %>
     <br>
     <br>
     <%= f.label :list_content, "List Content: " %>
-    <%= f.text_field :list_content, placeholder: "#{@user.inventory_list(list_content)}" %>
+    <%= f.text_field :list_content %>
     <br>
     <br>
     <%= f.submit "Submit" %>
