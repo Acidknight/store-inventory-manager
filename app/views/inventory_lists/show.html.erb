@@ -1,11 +1,11 @@
 <br>
 <br>
 <br>
-<h1><%= @inventory_list.name %></h1>
-<h4><%= @inventory_list.item_count%></h4>
-<h4><%= @inventory_list.date%></h4>
-<h4><%= @inventory_list.time%></h4>
-<h4><%= @inventory_list.list_content%></h4>
+<h1>Name: <%= @inventory_list.name %></h1>
+<h4>Item Count: <%= @inventory_list.item_count%></h4>
+<h4>Date: <%=  @inventory_list.date%></h4>
+<h4>Time: <%=  @inventory_list.time%></h4>
+<h4>List Content: <%=  @inventory_list.list_content%></h4>
 <br><br>
 
 <%= form_for(@inventory_list) do |f| %>

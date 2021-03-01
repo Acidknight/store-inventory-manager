@@ -9,7 +9,7 @@
     <br>
     <br>
     <%= f.label :item_count, "Item Count: " %>
-    <%= f.text_field :item_count %>
+    <%= f.number_field :item_count %>
     <br>
     <br>
     <%= f.label :date, "Date: " %>
@@ -27,6 +27,3 @@
     <%= f.submit "Submit" %>
 <% end %>
 
-<p class="button"><%= button_to 'Delete Inventory List', inventory_lists_path(@inventory_list), method: 'delete' %></p>
-
-<p><%= button_to 'Return to the homepage', users_path, method: 'get' %></p>
