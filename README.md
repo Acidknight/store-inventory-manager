@@ -1,24 +1,15 @@
-# README
+Store Inventory Manager
+Store Inventory Manager web application provides a tool for helping users add feedback to inventory lists in the hopes that it may help future lists.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+To use this app, clone the repo, then execute: bundle install
 
-Things you may want to cover:
+Usage
+Run rails db:migrate
+Run rails s
+Launch http://127.0.0.1:3000in your browser
 
-* Ruby version
+Please let me know what can be added or changed to this app as all feedback helps. I can be reached at Acidknights89@gmail.com
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+Distributed under the MIT License
